@@ -34,7 +34,7 @@ const User = require('./models/User'); // Replace with the actual path to your U
 
 // Registration endpoint
 app.post('/api/register', async (req, res) => {
-  const { email, password, phoneNumber } = req.body;
+  const { name,email, password,confirmPassword,areaofExpertise,state,district,location, emergencyNumber } = req.body;
 
   try {
     // Check if a user with the provided email already exists in the database
@@ -47,9 +47,15 @@ app.post('/api/register', async (req, res) => {
 
     // Create a new user object
     const newUser = new User({
+      name,
       email,
-      password, // You should hash and salt the password for security
-      phoneNumber,
+      password,
+      confirmPassword,
+      areaofExpertise,
+      state,
+      district,
+      location, // You should hash and salt the password for security
+      emergencyNumber,
       // Add other user properties here if needed
     });
 
