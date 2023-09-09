@@ -5,6 +5,7 @@ function Register() {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
+    phoneNumber: '',
   });
 
   const handleChange = (e) => {
@@ -29,6 +30,7 @@ function Register() {
       <form onSubmit={handleSubmit}>
         <input type="text" name="email" placeholder="Email" value={formData.email} onChange={handleChange} />
         <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} />
+        <input type="text" name="phoneNumber" placeholder="Phone Number" value={formData.phoneNumber} onChange={handleChange}/>
         <button type="submit">Register</button>
       </form>
     </div>
