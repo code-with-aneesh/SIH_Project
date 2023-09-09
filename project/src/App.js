@@ -1,14 +1,17 @@
+// App.js
 import React from 'react';
-import RegistrationForm from './Registration'; // Update the path to match your directory structure
-import './Registration.css'; // Update the path to match your directory structure
+import { Routes, Route } from 'react-router-dom';
+import Register from './components/register/register';
 
 function App() {
   return (
-    <div className="App">
-      {/* Your other app content */}
-      <RegistrationForm />
-    </div>
+  
+      <Routes>
+        <Route path="/" element={<Register/>} />
+        {/* Add more routes for other pages */}
+      </Routes>
+   
   );
 }
-// SIH Project
+
 export default App;
