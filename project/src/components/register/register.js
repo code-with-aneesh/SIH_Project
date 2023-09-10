@@ -4,38 +4,23 @@ import axios from 'axios';
 function Register() {
   const [formData, setFormData] = useState({
     name: '',
+    areaOfExpertise: '',
     email: '',
     password: '',
-    confirmPassword: '',
-    areaOfExpertise: '',
     state: '',
     district: '',
     location: '',
     emergencyNumber: '',
   });
 
-  const [passwordConditionsMet, setPasswordConditionsMet] = useState({
-    minLength: false,
-    hasLetter: false,
-    hasNumber: false,
-  });
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
 
     // Password validation conditions
-    if (name === 'password') {
-      const minLengthCondition = value.length >= 8;
-      const hasLetterCondition = /[a-zA-Z]/.test(value);
-      const hasNumberCondition = /[0-9]/.test(value);
-
-      setPasswordConditionsMet({
-        minLength: minLengthCondition,
-        hasLetter: hasLetterCondition,
-        hasNumber: hasNumberCondition,
-      });
-    }
+   
   };
 
   const handleSubmit = async (e) => {
@@ -43,10 +28,10 @@ function Register() {
 
     try {
       // Add your registration logic here using axios.post
-      console.log(formData);
+      const response = await axios.post('/api/register', formData);
     } catch (error) {
       // Handle registration failure
-      console.error(error);
+      
     }
   };
 
@@ -82,59 +67,27 @@ function Register() {
           value={formData.password}
           onChange={handleChange}
         />
-        <div>
-          Password conditions:
-          <ul>
-            <li>At least 8 characters: {passwordConditionsMet.minLength ? '✅' : '❌'}</li>
-            <li>At least 1 letter: {passwordConditionsMet.hasLetter ? '✅' : '❌'}</li>
-            <li>At least 1 number: {passwordConditionsMet.hasNumber ? '✅' : '❌'}</li>
-          </ul>
-        </div>
         <input
-          type={formData.showPassword ? 'text' : 'password'}
-          name="confirmPassword"
-          placeholder="Confirm Password"
-          value={formData.confirmPassword}
-          onChange={handleChange}
-        />
-        <label>
-          Show Password
-          <input
-            type="checkbox"
-            name="showPassword"
-            checked={formData.showPassword}
-            onChange={(e) =>
-              setFormData({ ...formData, showPassword: e.target.checked })
-            }
-          />
-        </label>
-        <select
+          type="text"
           name="state"
+          placeholder="state"
           value={formData.state}
           onChange={handleChange}
-        >
-          {/* Populate this select with a list of Indian states */}
-          <option value="">Select State</option>
-          {/* Add options for Indian states */}
-        </select>
-        <select
+        />
+        <input
+          type="text"
           name="district"
+          placeholder="district"
           value={formData.district}
           onChange={handleChange}
-        >
-          {/* Populate this select with a list of districts based on the selected state */}
-          <option value="">Select District</option>
-          {/* Add options for districts */}
-        </select>
-        <select
+        />
+        <input
+          type="text"
           name="location"
+          placeholder="Location"
           value={formData.location}
           onChange={handleChange}
-        >
-          {/* Populate this select with a list of locations based on the selected district */}
-          <option value="">Select Village/Town</option>
-          {/* Add options for locations */}
-        </select>
+        />
         <input
           type="text"
           name="emergencyNumber"
