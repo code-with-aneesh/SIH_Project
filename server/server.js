@@ -1,7 +1,9 @@
 const express = require('express');
+const nodemailer = require("nodemailer");
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+
 
 
 const app = express();
@@ -34,7 +36,7 @@ const User = require('./models/User'); // Replace with the actual path to your U
 
 // Registration endpoint
 app.post('/api/register', async (req, res) => {
-  const { name,email, password,confirmPassword,areaofExpertise,state,district,location, emergencyNumber } = req.body;
+  const { name,areaofExpertise,email, password,state,district,location, emergencyNumber } = req.body;
 
   try {
     // Check if a user with the provided email already exists in the database
@@ -48,10 +50,9 @@ app.post('/api/register', async (req, res) => {
     // Create a new user object
     const newUser = new User({
       name,
+      areaofExpertise,
       email,
       password,
-      confirmPassword,
-      areaofExpertise,
       state,
       district,
       location, // You should hash and salt the password for security
@@ -66,6 +67,49 @@ app.post('/api/register', async (req, res) => {
     res.status(201).json({ message: 'Registration successful', user: newUser });
   } catch (error) {
     console.error('Error during registration:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+
+
+app.post('/', async (req, res) => {
+  const { email } = req.body;
+  try {
+    const oldUser = await User.findOne({ email });
+    if (!oldUser) {
+      return res.json({ status: "User Not Exists!!" });
+    }
+    
+    const link = `http://localhost:3000/reset-password/${oldUser._id}`;
+    var transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user:"shubshinde8381@gmail.com",
+        pass:"vwgibmzumjhhwtao",
+      },
+    });
+
+   const mailOptions = {
+      from: 'shubshinde8381@gmail.com',
+      to: email,
+      subject: "Password Reset",
+      text: link,
+    };
+
+    transporter.sendMail(mailOptions, function (error, info) {
+      if (error) {
+        console.log(error);
+        res.status(500).json({ message: 'Failed to send reset email' });
+      
+      } else {
+        console.log("Email sent: " + info.response);
+        res.status(200).json({ message: 'Password reset email sent' });
+      }
+    });
+    console.log(link);
+  } catch (error) { 
+    console.error('Error during password reset:', error);
     res.status(500).json({ message: 'Server error' });
   }
 });
