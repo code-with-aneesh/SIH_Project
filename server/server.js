@@ -4,12 +4,8 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-
-
 const app = express();
 const port = process.env.PORT || 3000;
-
-
 
 // MongoDB connection setup (replace with your MongoDB Atlas connection string)
 const mongoURI = 'mongodb+srv://aneeshangane:karasuno1024@cluster0.xn1symd.mongodb.net/?retryWrites=true&w=majority';
@@ -36,7 +32,7 @@ const User = require('./models/User'); // Replace with the actual path to your U
 
 // Registration endpoint
 app.post('/api/register', async (req, res) => {
-  const { name,areaofExpertise,email, password,state,district,location, emergencyNumber } = req.body;
+  const { name,email, password,areaofExpertise, emergencyNumber } = req.body;
 
   try {
     // Check if a user with the provided email already exists in the database
@@ -50,12 +46,10 @@ app.post('/api/register', async (req, res) => {
     // Create a new user object
     const newUser = new User({
       name,
-      areaofExpertise,
       email,
       password,
-      state,
-      district,
-      location, // You should hash and salt the password for security
+      areaofExpertise,
+      // You should hash and salt the password for security
       emergencyNumber,
       // Add other user properties here if needed
     });
