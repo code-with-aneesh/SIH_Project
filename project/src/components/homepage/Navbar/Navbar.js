@@ -6,7 +6,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 function Navbar() {
   return (
     <nav className="navbar">
-     <span className="app-name">Connect Agenc</span>
+     <span className="app-name">Connect Agency</span>
      <div className="search-bar">
             <input type="text" placeholder="Search Anything..." />
             <button className="search-button">Search</button>
@@ -36,4 +36,3 @@ function Navbar() {
 }
 
 export default Navbar;
-//Navbar.js
