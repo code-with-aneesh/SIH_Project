@@ -102,3 +102,4 @@ function Register() {
 }
 
 export default Register;
+//register.js
