@@ -5,14 +5,19 @@ import axios from 'axios';
 function Register() {
   const [formData, setFormData] = useState({
     name: '',
-    areaOfExpertise: '',
     email: '',
     password: '',
-    state: '',
-    district: '',
-    location: '',
+    confirmPassword: '',
+    areaOfExpertise: '',
     emergencyNumber: '',
   });
+
+  const [passwordConditionsMet, setPasswordConditionsMet] = useState({
+    minLength: false,
+    hasLetter: false,
+    hasNumber: false,
+  });
+
 
   
 
@@ -21,6 +26,18 @@ function Register() {
     setFormData({ ...formData, [name]: value });
 
     // Password validation conditions
+    if (name === 'password') {
+      const minLengthCondition = value.length >= 8;
+      const hasLetterCondition = /[a-zA-Z]/.test(value);
+      const hasNumberCondition = /[0-9]/.test(value);
+
+      setPasswordConditionsMet({
+        minLength: minLengthCondition,
+        hasLetter: hasLetterCondition,
+        hasNumber: hasNumberCondition,
+      });
+    }
+
    
   };
 
@@ -37,68 +54,79 @@ function Register() {
   };
 
   return (
-    <div>
-      <h2>Register</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="container">
+    <h2>Register</h2>
+    <form onSubmit={handleSubmit}>
+      <div className="form-group">
+        <label htmlFor="name">
+          <i className="fas fa-user"></i> Name:
+        </label>
         <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          value={formData.name}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="areaOfExpertise"
-          placeholder="Area of Expertise"
-          value={formData.areaOfExpertise}
-          onChange={handleChange}
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-        <input
-          type={formData.showPassword ? 'text' : 'password'}
-          name="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="state"
-          placeholder="state"
-          value={formData.state}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="district"
-          placeholder="district"
-          value={formData.district}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="location"
-          placeholder="Location"
-          value={formData.location}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="emergencyNumber"
-          placeholder="Emergency Number"
-          value={formData.emergencyNumber}
-          onChange={handleChange}
-        />
-        <button type="submit">Register</button>
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="area-of-expertise">
+            <i className="fas fa-briefcase"></i> Area of Expertise:
+          </label>
+          <input
+            type="text"
+            id="area-of-expertise"
+            name="areaOfExpertise"
+            value={formData.areaOfExpertise}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="email">
+            <i className="fas fa-envelope"></i> Email Address:
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="password">
+            <i className="fas fa-lock"></i> Password (Alphanumeric):
+          </label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            pattern="^(?=.*[0-9])(?=.*[A-Za-z]).{8,}$"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+        <small>Password must be at least 8 characters and contain at least one number and one letter.</small>
+        </div>
+
+        
+
+        <button type="submit" className="btn-Register">
+          Register
+        </button>
       </form>
+
+      <p className="login-link">
+        Already have an account? <a href="#">Login</a>
+      </p>
     </div>
+
   );
 }
 
