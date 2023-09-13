@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './register.css';
 import axios from 'axios';
 
+import { useNavigate} from 'react-router-dom';
+
 function Register() {
   const [formData, setFormData] = useState({
     name: '',
@@ -18,7 +20,7 @@ function Register() {
     hasNumber: false,
   });
 
-
+  const navigate = useNavigate();
   
 
   const handleChange = (e) => {
@@ -47,6 +49,7 @@ function Register() {
     try {
       // Add your registration logic here using axios.post
       const response = await axios.post('/api/register', formData);
+      navigate('/login');
     } catch (error) {
       // Handle registration failure
       
@@ -117,13 +120,13 @@ function Register() {
 
         
 
-        <button type="submit" className="btn-Register">
+        <button type="submit" className="btn-Register" >
           Register
         </button>
       </form>
 
       <p className="login-link">
-        Already have an account? <a href="#">Login</a>
+        Already have an account? <a href="/login">Login</a>
       </p>
     </div>
 
