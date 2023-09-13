@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
+
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -32,7 +33,8 @@ const User = require('./models/User'); // Replace with the actual path to your U
 
 // Registration endpoint
 app.post('/api/register', async (req, res) => {
-  const { name,email, password,areaofExpertise, emergencyNumber } = req.body;
+  
+  const { name,areaofExpertise,email, password} = req.body;
 
   try {
     // Check if a user with the provided email already exists in the database
@@ -43,27 +45,57 @@ app.post('/api/register', async (req, res) => {
       return res.status(400).json({ message: 'Email already in use' });
     }
 
+
+    // Create a new user object
+    
     // Create a new user object
     const newUser = new User({
       name,
+      areaofExpertise,
       email,
       password,
-      areaofExpertise,
-      // You should hash and salt the password for security
-      emergencyNumber,
       // Add other user properties here if needed
     });
-
-    // Save the new user to the database
     await newUser.save();
 
+
+    // Registration successful, send a success response
+  
     // Registration successful, send a success response
     res.status(201).json({ message: 'Registration successful', user: newUser });
+
   } catch (error) {
     console.error('Error during registration:', error);
     res.status(500).json({ message: 'Server error' });
   }
+
+   
 });
+
+// ...
+app.post('/api/login', async (req,res) => {
+  const { email, password} = req.body;
+
+  try{
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(400).json({ message: 'User not found' });
+    }
+    
+    if (password === user.password) {
+      
+      res.status(200).json({ message: 'Login successful', user });
+    } else {
+      
+      res.status(401).json({ message: 'Invalid password' });
+    }
+
+  } catch (error) {
+    console.error('Error during login:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
+})
+
 
 
 

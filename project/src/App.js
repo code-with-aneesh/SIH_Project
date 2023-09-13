@@ -11,9 +11,9 @@ function App() {
   return (
   
       <Routes>
-        <Route path="/naagin" element={<Register/>} />
+        <Route path="/" element={<Register/>} />
         <Route path="/homepage" element={<Navbar/>} />
-        <Route path="/" element={<ForgotPassword/>} />
+        <Route path="/naagin" element={<ForgotPassword/>} />
         <Route path="/login" element={<Login/>} />
         {/* Add more routes for other pages */}
       </Routes>
