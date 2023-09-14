@@ -1,63 +1,92 @@
-body {
-    background-color: #fff; /* White background */
-    font-family: Arial, sans-serif;
-  }
-  .container {
-    margin-top: 80px;
-    margin-left: 430px;
-    max-width: 400px;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    align-self: center;
-    justify-self: center;
-  }
-  h2 {
-    text-align: center;
-  }
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  .form-group {
-    position: relative;
-  }
-  .ipbox{
-    width: 350px; /* Account for the icon and additional padding */
-    padding: 10px 40px 10px 10px; /* Adjust right padding to accommodate the icon */
-    margin-bottom: 15px;
-   }
-  .ip{
-    width: 360px;
-    height: 25px;
-  }
-  .fa {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-  }
-  .checkbox-label {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  input[type="checkbox"] {
-    margin-right: 5px;
-  }
-  .btn-Register {
-    background-color: #007bff; /* Blue background */
-    color: #fff;
-    border: none;
-    padding: 10px 0;
-    width: 100%;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  .btn-Register:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-  }
-  .login-link {
-    text-align: center;
-    margin-top: 20px;
-  }
+/* White background and font styles */
+.register-body {
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+/* Container styles */
+.container {
+  margin-top: 80px;
+  margin-left: 430px;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  align-self: center;
+  justify-self: center;
+}
+
+/* Heading style */
+.register-heading {
+  text-align: center;
+}
+
+/* Label style */
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Form group styles */
+.form-group {
+  position: relative;
+}
+
+/* Input box styles */
+.input-box {
+  width: 350px; /* Account for the icon and additional padding */
+  padding: 10px 40px 10px 10px; /* Adjust right padding to accommodate the icon */
+  margin-bottom: 15px;
+}
+
+.input-field {
+  width: 360px;
+  height: 25px;
+}
+
+/* Icon styles */
+.fa {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+/* Checkbox label styles */
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* Checkbox input styles */
+.input-checkbox {
+  margin-right: 5px;
+}
+
+/* Button styles */
+.btn-register {
+  background-color: #007bff; /* Blue background */
+  color: #fff;
+  border: none;
+  padding: 10px 0;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-register:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Login link styles */
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Password condition styles */
+.password-condition {
+  font-size: 12px;
+  margin-top: 5px;
+}

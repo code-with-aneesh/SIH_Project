@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import './register.css';
 import axios from 'axios';
-
-import { useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -21,7 +20,6 @@ function Register() {
   });
 
   const navigate = useNavigate();
-  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,8 +37,6 @@ function Register() {
         hasNumber: hasNumberCondition,
       });
     }
-
-   
   };
 
   const handleSubmit = async (e) => {
@@ -52,81 +48,81 @@ function Register() {
       navigate('/login');
     } catch (error) {
       // Handle registration failure
-      
     }
   };
 
   return (
     <div className="container">
-    <h2>Register</h2>
-    <form onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label htmlFor="name">
-          <i className="fas fa-user"></i> Name:
-        </label>
-        <div className='ipbox'>
-        <input
-        className='ip'
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        <div className="ipbox">
-          <label htmlFor="area-of-expertise">
-            <i className="fas fa-briefcase"></i> Area of Expertise:
+      <h2 className="register-heading">Register</h2>
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="name" className="form-label">
+            <i className="fas fa-user"></i> Name:
           </label>
-          <input
-          className='ip'
-            type="text"
-            id="area-of-expertise"
-            name="areaOfExpertise"
-            value={formData.areaOfExpertise}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        <div className="ipbox">
-          <label htmlFor="email">
-            <i className="fas fa-envelope"></i> Email Address:
-          </label>
-          <input
-          className='ip'
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        <div className="ipbox">
-          <label htmlFor="password">
-            <i className="fas fa-lock"></i> Password (Alphanumeric):
-          </label>
-          <input
-          className='ip'
-            type="password"
-            id="password"
-            name="password"
-            pattern="^(?=.*[0-9])(?=.*[A-Za-z]).{8,}$"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
+          <div className='input-box'>
+            <input
+              className='input-field'
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
           </div>
-        <small>Password must be at least 8 characters and contain at least one number and one letter.</small>
+
+          <div className="input-box">
+            <label htmlFor="area-of-expertise" className="form-label">
+              <i className="fas fa-briefcase"></i> Area of Expertise:
+            </label>
+            <input
+              className='input-field'
+              type="text"
+              id="area-of-expertise"
+              name="areaOfExpertise"
+              value={formData.areaOfExpertise}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="input-box">
+            <label htmlFor="email" className="form-label">
+              <i className="fas fa-envelope"></i> Email Address:
+            </label>
+            <input
+              className='input-field'
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="input-box">
+            <label htmlFor="password" className="form-label">
+              <i className="fas fa-lock"></i> Password (Alphanumeric):
+            </label>
+            <input
+              className='input-field'
+              type="password"
+              id="password"
+              name="password"
+              pattern="^(?=.*[0-9])(?=.*[A-Za-z]).{8,}$"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <small className="password-condition">
+            Password must be at least 8 characters and contain at least one
+            number and one letter.
+          </small>
         </div>
 
-        
-
-        <button type="submit" className="btn-Register" >
+        <button type="submit" className="btn-register">
           Register
         </button>
       </form>
@@ -135,9 +131,7 @@ function Register() {
         Already have an account ? <a href="/">Login</a>
       </p>
     </div>
-
   );
 }
 
 export default Register;
-//register.js

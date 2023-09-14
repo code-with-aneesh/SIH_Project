@@ -8,24 +8,24 @@ function Navbar() {
     <nav className="navbar">
      <span className="app-name">ResQConnect</span>
      <div className="search-bar">
-            <input type="text" placeholder="Search Anything..." />
+            <input type="text" placeholder="Search Anything..." className="search-input" />
             <button className="search-button">Search</button>
      </div>
      <div className="navbar-right">
           <ul className="nav-links">
             <li className="nav-link">
-              <a href="/">Home</a>
+              <a href="/" className="nav-link-text">Home</a>
             </li>
             <li className="nav-link">
-              <a href="/about">About</a>
+              <a href="/about" className="nav-link-text">About</a>
             </li>
             <li className="nav-link">
-              <a href="/profile">
+              <a href="/profile" className="nav-link-icon">
                 <AccountCircleIcon/>
               </a>
             </li>
             <li className="nav-link">
-              <a href="/EntryPage">
+              <a href="/EntryPage" className="nav-link-icon">
                 <LogoutIcon/>
               </a>
             </li>
