@@ -64,7 +64,9 @@ function Register() {
         <label htmlFor="name">
           <i className="fas fa-user"></i> Name:
         </label>
+        <div className='ipbox'>
         <input
+        className='ip'
             type="text"
             id="name"
             name="name"
@@ -74,11 +76,12 @@ function Register() {
           />
         </div>
 
-        <div className="form-group">
+        <div className="ipbox">
           <label htmlFor="area-of-expertise">
             <i className="fas fa-briefcase"></i> Area of Expertise:
           </label>
           <input
+          className='ip'
             type="text"
             id="area-of-expertise"
             name="areaOfExpertise"
@@ -88,11 +91,12 @@ function Register() {
           />
         </div>
 
-        <div className="form-group">
+        <div className="ipbox">
           <label htmlFor="email">
             <i className="fas fa-envelope"></i> Email Address:
           </label>
           <input
+          className='ip'
             type="email"
             id="email"
             name="email"
@@ -102,11 +106,12 @@ function Register() {
           />
         </div>
 
-        <div className="form-group">
+        <div className="ipbox">
           <label htmlFor="password">
             <i className="fas fa-lock"></i> Password (Alphanumeric):
           </label>
           <input
+          className='ip'
             type="password"
             id="password"
             name="password"
@@ -115,6 +120,7 @@ function Register() {
             onChange={handleChange}
             required
           />
+          </div>
         <small>Password must be at least 8 characters and contain at least one number and one letter.</small>
         </div>
 
@@ -126,7 +132,7 @@ function Register() {
       </form>
 
       <p className="login-link">
-        Already have an account? <a href="/login">Login</a>
+        Already have an account ? <a href="/">Login</a>
       </p>
     </div>
 
