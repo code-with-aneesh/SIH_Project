@@ -41,8 +41,8 @@ function Login() {
     <div className="form-box">
       <div className="form-value">
         <form onSubmit={handleSubmit}>
-          <h2>Login Account</h2>
-          <div className="inputbox">
+          <h2 className='login-heading'>Login Account</h2>
+          <div className="login-inputbox">
             <ion-icon name="mail-outline"></ion-icon>
             <input
               type="email"
@@ -53,7 +53,7 @@ function Login() {
             />
             <label htmlFor="email">Email</label>
           </div>
-          <div className="inputbox">
+          <div className="login-inputbox">
             <ion-icon name="lock-closed-outline"></ion-icon>
             <input
               type="password"
@@ -64,13 +64,13 @@ function Login() {
             />
             <label htmlFor="password">Password</label>
           </div>
-          <div className="forget">
+          <div className="login-forget">
             <label>
-              <a href="forgotpass">Forget Password?</a>
+              <a href="forgotpass">Forgot Password?</a>
             </label>
           </div>
-          <button>Login Account</button>
-          <div className="register">
+          <button className='login-button'>Login Account</button>
+          <div className="login-register">
             <p>
               Don't Have an Account? <a href="/register">Sign Up</a>
             </p>

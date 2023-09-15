@@ -1,143 +1,143 @@
 /* Global reset */
 .login-reset {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-  }
-  
-  /* Body styles */
-  .login-body {
-    background-color: #E5E5E5;
-  }
-  
-  /* Section styles */
-  .login-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    width: 100%;
-    background-color: #eadcdc;
-  }
-  
-  /* Form box styles */
-  .form-box {
-    position: relative;
-    width: 400px;
-    height: 450px;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 25px;
-    display: flex;
-    align-items: center;
-    margin-left: 500px;
-    margin-top: 100px;
-  }
-  
-  /* Heading styles */
-  .login-heading {
-    font-size: 2em;
-    color: black;
-    text-align: center;
-  }
-  
-  /* Input box styles */
-  .inputbox {
-    position: relative;
-    margin: 30px 0;
-    width: 310px;
-    border-bottom: 2px solid black;
-  }
-  
-  .inputbox label {
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    transform: translateY(-50%);
-    color: black;
-    font-size: 1em;
-    pointer-events: none;
-    transition: 0.5s;
-  }
-  
-  input:focus ~ label,
-  input:valid ~ label {
-    top: -5px;
-  }
-  
-  .inputbox input {
-    width: 100%;
-    height: 50px;
-    background: transparent;
-    border: none;
-    outline: none;
-    font-size: 1em;
-    padding: 0 35px 0 5px;
-    color: black;
-  }
-  
-  .inputbox ion-icon {
-    position: absolute;
-    right: 8px;
-    color: blue;
-    font-size: 1.2em;
-    top: 20px;
-  }
-  
-  /* Forget styles */
-  .forget {
-    margin: -15px 0 15px;
-    font-size: 0.9em;
-    color: black;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .forget label input {
-    margin-right: 3px;
-  }
-  
-  .forget label a {
-    color: black;
-    text-decoration: none;
-  }
-  
-  .forget label a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Button styles */
-  .login-button {
-    width: 100%;
-    height: 40px;
-    border-radius: 40px;
-    background: blue;
-    color: white;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: 600;
-    margin-top: 2vw;
-  }
-  
-  /* Register styles */
-  .login-register {
-    font-size: 0.9em;
-    color: black;
-    text-align: center;
-    margin: 25px 0 10px;
-  }
-  
-  .login-register p a {
-    text-decoration: none;
-    color: black;
-    font-weight: 600;
-  }
-  
-  .login-register p:hover {
-    text-decoration: underline;
-  }
-  
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+/* Body styles */
+body,
+.login-body {
+  background-color: #E5E5E5;
+}
+
+/* Section styles */
+.login-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #eadcdc;
+}
+
+/* Form box styles */
+.form-box{
+  position: relative;
+  width: 400px;
+  height: 450px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  margin-left: 500px; /* Adjusted margin */
+  margin-top: 100px; /* Adjusted margin */
+}
+
+/* Heading styles */
+.login-heading {
+  font-size: 2em;
+  color: black;
+  text-align: center;
+}
+
+/* Input box styles */
+.login-inputbox {
+  position: relative;
+  margin: 30px 0;
+  width: 310px;
+  border-bottom: 2px solid black;
+}
+
+
+.login-inputbox label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  color: black;
+  font-size: 1em;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.login-inputbox input:focus ~ label,
+.login-inputbox input:valid ~ label {
+  top: -5px;
+}
+
+.login-inputbox input {
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  padding: 0 35px 0 5px;
+  color: black;
+}
+
+
+.login-inputbox ion-icon {
+  position: absolute;
+  right: 8px;
+  color: blue;
+  font-size: 1.2em;
+  top: 20px;
+}
+
+/* Forget styles */
+.login-forget {
+  margin-bottom: 5px;
+  font-size: 0.9em;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-forget label input {
+  margin-right: 3px;
+}
+
+.login-forget label a {
+  color: black;
+  text-decoration: none;
+}
+
+.login-forget label a:hover {
+  text-decoration: underline;
+}
+
+/* Button styles */
+.login-button {
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  background: blue;
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  margin-top: 2vw;
+}
+
+/* Register styles */
+.login-register {
+  font-size: 0.9em;
+  color: black;
+  text-align: center;
+  margin: 25px 0 10px;
+}
+
+.login-register p a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+.login-register p:hover a {
+  text-decoration: underline;
+}
