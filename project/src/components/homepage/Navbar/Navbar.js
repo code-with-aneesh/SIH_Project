@@ -2,9 +2,11 @@ import React from 'react';
 import './Navbar.css'; 
 import LogoutIcon from '@mui/icons-material/Logout';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import Map from '../../map/map';
 
 function Navbar() {
   return (
+   <div>
     <nav className="navbar">
      <span className="app-name">ResQConnect</span>
      <div className="search-bar">
@@ -32,6 +34,8 @@ function Navbar() {
           </ul>
         </div>
     </nav>
+    <Map/>
+    </div>
   );
 }
 

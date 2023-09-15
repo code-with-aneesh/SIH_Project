@@ -49,10 +49,8 @@ class DisasterReliefApp extends Component {
 
   render() {
     return (
+      
       <div className="disaster-relief-app">
-        <header className="app-header">
-          <h1>Welcome to ResQConnect</h1>
-        </header>
         <div className="container">
           <div className="sidebar">
             <div className="filter-section">

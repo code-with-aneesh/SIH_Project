@@ -34,7 +34,7 @@ const User = require('./models/User'); // Replace with the actual path to your U
 // Registration endpoint
 app.post('/api/register', async (req, res) => {
   
-  const { name,areaofExpertise,email, password} = req.body;
+  const { name,areaofExpertise,email, password,latitude,longitude} = req.body;
 
   try {
     // Check if a user with the provided email already exists in the database
@@ -54,6 +54,8 @@ app.post('/api/register', async (req, res) => {
       areaofExpertise,
       email,
       password,
+      latitude,
+      longitude
       // Add other user properties here if needed
     });
     await newUser.save();

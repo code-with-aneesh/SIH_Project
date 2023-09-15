@@ -39,13 +39,31 @@ function Register() {
     }
   };
 
+  const captureUserLocation = () => {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+
+        setFormData({ ...formData, latitude, longitude });
+
+        
+      }, (error) => {
+        console.error("Error capturing user location:", error);
+      });
+    } else {
+      console.error("Geolocation is not available in this browser.");
+    }
+  };
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       // Add your registration logic here using axios.post
       const response = await axios.post('/api/register', formData);
-      navigate('/login');
+      navigate('/');
     } catch (error) {
       // Handle registration failure
     }
@@ -120,6 +138,11 @@ function Register() {
             Password must be at least 8 characters and contain at least one
             number and one letter.
           </small>
+
+          <button type="button" onClick={captureUserLocation} className="btn-capture-location">
+          Capture Location
+          </button>
+          
         </div>
 
         <button type="submit" className="btn-register">
