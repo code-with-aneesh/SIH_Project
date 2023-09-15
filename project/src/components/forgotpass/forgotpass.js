@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './forgotpass.css'; // Import the CSS file with class names
 import axios from 'axios';
 
 function ForgotPassword() {
@@ -21,12 +22,13 @@ function ForgotPassword() {
   };
 
   return (
-    <div>
-      <h2>Forgot Password</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="email">Email:</label>
+    <div className="form-box"> {/* Use the form-box class */}
+      <h2 className="forgot-heading">Forgot Password</h2> {/* Use the login-heading class */}
+      <form className='forms' onSubmit={handleSubmit}>
+        <div className="inputboxs"> {/* Use the inputbox class */}
+          <label className='mailid' htmlFor="email">Email:</label>
           <input
+            className='boxx'
             type="email"
             id="email"
             name="email"
@@ -35,7 +37,7 @@ function ForgotPassword() {
             required
           />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className="login-button">Submit</button> {/* Use the login-button class */}
       </form>
       {message && <p>{message}</p>}
     </div>
