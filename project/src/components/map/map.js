@@ -76,7 +76,6 @@ function Map() {
 
   return (
     <div className="map-wrap">
-      <button onClick={getUserLocation}>Get My Location</button>
       <div ref={mapContainer} className="map" />
     </div>
   );

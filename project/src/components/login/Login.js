@@ -24,7 +24,7 @@ function Login() {
       const { user } = response.data;
 
       if (user) {
-        navigate('/homepage');
+        navigate('/navbar');
       } else {
         console.error('Login failed: User not found or invalid password');
       }

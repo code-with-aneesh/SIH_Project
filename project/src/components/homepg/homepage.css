@@ -1,135 +1,154 @@
-/* Header styles */
-.app-header {
-    background-color: #007BFF;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-}
 
-.app-header h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
+.adjust{
+margin-top: 50px;
+  display:flex;
+  justify-content: space-between; 
 
-/* Container styles */
-.container {
-    display: flex;
-    max-width: 1200px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
+.home-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   width: 22%;
 
-/* Sidebar styles */
-.sidebar {
-    flex: 1;
-    background-color: #f9f9f9;
+}
+.homepage-reset {
+    margin: 0;
     padding: 0;
-    position: sticky;
-    top: 0;
-    height: calc(100vh - 60px);
-    overflow-y: auto;
-    border-radius: 10px 0 0 10px;
-    width: 900px;
-    margin-right: 200px;
-    margin-left: 50px;
-}
-
-/* Filter section styles */
-.filter-section {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.filter-section h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-/* Form styles */
-.filter-select,
-.filter-checkbox {
+    font-family: sans-serif;
+  }
+  
+  /* Body styles */
+  body,
+  .homepage-body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #E5E5E5;
+  }
+  
+  /* Section styles */
+  .homepage-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    background-color: #f9f9f9;
-}
-
-.filter-button {
-    background-color: #007BFF;
-    color: #fff;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-    width: 100%;
-}
-
-.filter-button:hover {
-    background-color: #0056b3;
-}
-
-/* Additional filters styles */
-
-/* Checkbox styles */
-.filter-checkbox input[type="checkbox"] {
-    margin-right: 5px;
-}
-
-/* Agency list styles */
-.agency-list {
-    margin-top: 30px;
-}
-
-.agency-card {
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.agency-card:hover {
-    transform: scale(1.03);
-}
-
-.agency-name {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.agency-info {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.contact-button {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 8px 16px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-.contact-button:hover {
-    background-color: #0056b3;
-}
-
-/* Register agency styles */
-.register-agency {
-    text-align: center;
+    background-color: #eadcdc;
+  }
+  
+  /* Form box styles (Adjusted margin) */
+  .filter {
+    position: relative;
+    width: 100%; /* Adjusted width */
+    min-height: 450px; /* Adjusted min-height */
+    background-color: white;
+    display:flex ;
+    flex-direction: row;
+    border-radius: 25px;
+    margin-top: 55px; /* Adjusted margin */
    
-}
+  }
+  
+  /* Heading styles */
+  .h21 {
+    font-size: 2em;
+    color: black;
+    text-align: center;
+    margin-top: 20px; /* Adjusted margin */
+  }
+  
+  /* Input box styles (Adjusted margin) */
+  .select {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: 2px solid black; /* Adjusted border */
+    outline: none;
+    font-size: 1em;
+    padding: 0 5px;
+    color: black;
+    margin: 10px 0; /* Adjusted margin */
+  }
+  
+  /* Additional Filters styles (Added margin) */
+  .additional-filters {
+    margin-top: 20px; /* Adjusted margin */
+  }
+  
+  /* Checkbox label styles */
+  .checkbox-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 5px 0;
+     /* Adjusted margin */
+  }
+  .checkbox-label{
+    margin-left: 5px;
+  }
+  .checkbox-input{
+    margin-right: 5px;
+  }
+  
+  /* Button styles */
+  button[type="submit"] {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: blue;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    margin-top: 20px; /* Adjusted margin */
+  }
+  
+  /* Agency List styles */
+  .agency-list {
+    margin-top: 20px; 
+  padding-left: 9px;
+    width: 22%;
+    
+  }
+  
+  .agency-card {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .agency-name {
+    font-weight: bold;
+  }
+  
+  .contact-button {
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+ 
+  .register-agency {
+    text-align: center;
+
+    margin-top: 20px; 
+  }
+  
+  .register-link {
+    color: black;
+
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .register-link:hover {
+    text-decoration: underline;
+  }
+  .registered-agency{
+    margin-left: 700px;
+  }

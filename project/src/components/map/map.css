@@ -1,12 +1,11 @@
 .map-wrap {
     position: relative;
-    width: 100%;
-    height: calc(100vh - 58px); /* calculate height of the screen minus the heading */
+    height: calc(100vh - 54px); 
+    width: 56%;
   }
   
   .map {
     position: absolute;
     width: 100%;
     height: 100%;
-    margin-top: 31px;
   }

@@ -2,7 +2,8 @@ import React from 'react';
 import './Navbar.css'; 
 import LogoutIcon from '@mui/icons-material/Logout';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import Map from '../../map/map';
+
+
 
 function Navbar() {
   return (
@@ -34,7 +35,6 @@ function Navbar() {
           </ul>
         </div>
     </nav>
-    <Map/>
     </div>
   );
 }
